@@ -1,3 +1,8 @@
+@include keyframes(fadeInAccordionTabs) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .accordion-tabs {
   $tab-border-color: $base-border-color;
   $tab-border: 1px solid $tab-border-color;
@@ -76,9 +81,6 @@
         left: 0;
         padding: $base-line-height/2 $gutter/2;
       }
-      .tab-content {
-        
-      }
     }
  
     &.js-is-active {
@@ -98,12 +100,8 @@
         display: block;
 
         .tab-content {
-          @include animation-name(fade-in);
-          @include animation-fill-mode(both);
-          @include keyframes(fade-in) {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-          }
+          @include animation-name(fadeInAccordionTabs);
+          @include animation-duration(1s);
         }
       }
     }
