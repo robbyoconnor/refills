@@ -1,0 +1,45 @@
+.search-tools {
+  $search-tools-border-color: $base-border-color;
+  $search-tools-background: lighten($search-tools-border-color, 10);
+
+  @include clearfix;
+  border: 1px solid $search-tools-border-color;
+  background: $search-tools-background;
+  padding: $gutter;
+
+  .filter {
+    margin-bottom: 1em;
+
+    @include media($large-screen) {
+      @include span-columns(5);
+      margin-bottom: 0;
+    }
+    
+
+    > div {
+      @extend input[type="text"];
+
+      label {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    ol li label {
+      display: inline;
+    }
+
+    button {
+      display: block;
+    }
+
+    .hide-options {
+      margin-bottom: 0;
+
+      ol, button {
+        display: none;
+      }
+    }
+  }  
+
+}
